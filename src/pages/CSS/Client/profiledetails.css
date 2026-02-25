@@ -1,0 +1,169 @@
+/* ===== PAGE CONTAINER ===== */
+
+.client-profile-page {
+  flex: 1;
+  background: #f7f7f7;
+  padding: 20px;
+  border-radius: 10px;
+  height: calc(100vh - 90px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  overflow: hidden;   /* ✅ prevent page scrolling */
+
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-family: "Times New Roman", Times, serif;
+}
+
+
+/* ===== BREADCRUMB ===== */
+
+.client-profile-breadcrumb-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 10px;
+}
+
+
+/* ===== CARD ===== */
+
+.client-profile-card {
+  background: #fff;
+  width: 90%;
+  max-width: 700px;
+
+  border-radius: 16px;
+  padding: 30px;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+
+  /* ✅ SCROLL ONLY INSIDE CARD */
+  max-height: calc(100vh - 160px);
+  overflow-y: auto;
+
+  scrollbar-width: thin;
+}
+
+
+/* ===== HEADER ===== */
+
+.client-profile-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 1.8rem;
+  color: #0d5bb4;
+  margin-bottom: 20px;
+}
+
+
+/* ===== TABS ===== */
+
+.client-profile-tabs {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 2px solid #dbeafe;
+  margin-bottom: 25px;
+}
+
+.client-profile-tabs button {
+  background: none;
+  border: none;
+  padding: 12px 20px;
+
+  font-weight: 600;
+  color: #64748b;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.client-profile-tabs button.active {
+  color: #0d5bb4;
+  border-bottom: 3px solid #0d5bb4;
+}
+
+
+/* ===== FORM ===== */
+
+.client-form-section label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #334155;
+}
+
+.client-form-section input,
+.client-form-section textarea {
+  margin-top: 5px;
+  padding: 10px;
+
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+}
+
+.client-form-section input:focus,
+.client-form-section textarea:focus {
+  border-color: #0d5bb4;
+  box-shadow: 0 0 0 2px rgba(13, 91, 180, 0.15);
+  outline: none;
+}
+
+textarea {
+  resize: none;
+  min-height: 70px;
+}
+
+
+/* ===== BUTTON ===== */
+
+.client-profile-btn-group {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.client-save-btn {
+  background: linear-gradient(135deg, #1565c0, #42a5f5);
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.client-save-btn:hover {
+  transform: scale(1.03);
+}
+
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 600px) {
+
+  .client-profile-card {
+    padding: 20px;
+
+    /* ✅ smaller height so scroll activates properly */
+    max-height: calc(100vh - 120px);
+  }
+
+  .client-profile-tabs {
+    flex-direction: column;
+    border-bottom: none;
+  }
+
+  .client-profile-tabs button {
+    border: 1px solid #dbeafe;
+    border-radius: 10px;
+    margin-bottom: 8px;
+  }
+}

@@ -1,0 +1,443 @@
+/* ===== DRONE APPROVE PAGE ===== */
+.drone-approve-page {
+  width: 100%;
+  height: calc(100vh - 90px);
+  margin: 0 auto;
+  padding: 1.5rem;
+  background: #f7f7f7;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-family: "Poppins", sans-serif;
+  transition: all 0.3s ease;
+  position: relative;
+  box-sizing: border-box;
+
+  display: flex; /* ADD THIS */
+  flex-direction: column; /* ADD THIS */
+  overflow: hidden;
+}
+
+.drone-approve-breadcrumb-wrapper {
+  position: absolute;
+  top: 1rem;
+  left: 10px;
+  z-index: 1;
+}
+
+/* ===== HEADER ===== */
+.drone-approve-header {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1565c0;
+  margin-bottom: 30px;
+  text-shadow: 0 1px 3px rgba(21, 101, 192, 0.3);
+}
+
+/* ===== DRONE TABLE ===== */
+.drone-table {
+  width: 100%;
+  overflow-x: auto;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.drone-table-wrapper {
+  width: 100%;
+  height: auto;
+  overflow-x: auto;
+  overflow-y: auto;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.drone-table table {
+  width: 100%;
+  max-width: 100%; /* Prevent overflow outside wrapper */
+  border-collapse: collapse;
+}
+
+.drone-table-wrapper td {
+  background: #fafafa;
+}
+
+.drone-table-wrapper tr:hover td {
+  background-color: #e3f2fd;
+}
+
+/* Scrollbar */
+.drone-table-wrapper::-webkit-scrollbar {
+  height: 8px;
+  width: 6px;
+}
+.drone-table-wrapper::-webkit-scrollbar-thumb {
+  background: #90caf9;
+  border-radius: 4px;
+}
+.drone-table-wrapper::-webkit-scrollbar-track {
+  background: #e3f2fd;
+}
+
+.drone-table th,
+.drone-table td {
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.drone-table th {
+  background: #1565c0;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.drone-table td {
+  background-color: #fafafa;
+}
+
+.drone-table tr:hover td {
+  background-color: #e3f2fd;
+}
+
+/* ===== SCROLLBAR STYLING ===== */
+.drone-table::-webkit-scrollbar {
+  height: 8px;
+}
+
+.drone-table::-webkit-scrollbar-thumb {
+  background: #90caf9;
+  border-radius: 4px;
+}
+
+.drone-table::-webkit-scrollbar-track {
+  background: #e3f2fd;
+}
+
+/* ===== BUTTONS ===== */
+.view-btn,
+.approve-btn,
+.reject-btn,
+.link-btn {
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  padding: 6px 12px;
+  font-size: 0.9rem;
+}
+
+.view-btn {
+  background-color: #42a5f5;
+  color: #fff;
+}
+
+.view-btn:hover {
+  background-color: #1e88e5;
+}
+
+.approve-btn {
+  background: #1565c0;
+  color: white;
+}
+
+.approve-btn:hover {
+  background: #0d47a1;
+}
+
+.reject-btn {
+  background-color: #ccc;
+  color: black;
+  margin-left: 8px;
+}
+
+.reject-btn:hover {
+  background-color: #b0bec5;
+}
+
+.link-btn {
+  background: none;
+  color: #1565c0;
+  text-decoration: underline;
+  padding: 0;
+  font-size: 0.95rem;
+}
+
+.link-btn:hover {
+  color: #0d47a1;
+}
+
+/* ===== POPUPS ===== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(25, 25, 25, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.approval-modal {
+  position: relative;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 1000px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  max-height: 100vh;
+  overflow-y: auto;
+}
+
+.approval-modal h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1565c0;
+  font-size: 25px;
+}
+
+/* ===== APPROVAL TABLE ===== */
+.approval-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  margin-bottom: 20px;
+}
+
+.approval-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.approval-table th,
+.approval-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.approval-table th {
+  background-color: #f5f5f5;
+  color: #333;
+  font-weight: 600;
+}
+
+.field-label {
+  font-weight: bold;
+  background-color: #fafafa;
+  width: 180px;
+}
+
+/* ===== APPROVAL ACTIONS - BOTTOM RIGHT ===== */
+.approval-actions {
+  display: flex;
+  justify-content: flex-end; /* Align buttons to right */
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.approval-actions textarea {
+  width: 100%;
+  min-height: 80px;
+  padding: 8px;
+  resize: vertical;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+/* Action buttons row */
+.action-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+/* ===== FILE LISTS ===== */
+.file-lists {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.file-items {
+  display: flex;
+  align-items: center;
+  background: #e0e0e0;
+  padding: 6px 10px;
+  border-radius: 6px;
+  margin-bottom: 5px;
+  font-size: 0.95rem;
+  gap: 10px;
+}
+
+.manufacture-links {
+  cursor: pointer;
+  color: #1565c0;
+  font-weight: 600;
+  text-decoration: underline;
+  display: inline-block;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.manufacture-links:hover {
+  color: #68aaf5;
+  transform: translateX(5px);
+}
+
+/* ===== CLOSE BUTTON (TOP-RIGHT) ===== */
+.approve-close-btn {
+  position: sticky;   /* IMPORTANT */
+  top: 0;
+  margin-left: auto;
+  display: block;
+
+  background: white; /* prevent overlap while scrolling */
+  z-index: 50;
+
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #333;
+    transition: all 0.25s ease; /* animation */
+
+}
+
+
+.approve-close-btn:hover {
+  color: #d32f2f;
+
+  transform: scale(1);   /* makes thicker/bigger */
+  font-weight: 900;        /* thicker look */
+}
+
+
+.bdapprove-status-badge {
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-transform: capitalize;
+  text-align: center;
+  display: inline-block;
+  min-width: 100px;
+  font-size: 12px;
+}
+
+/* Pending */
+.bdapprove-status-badge.status-pending {
+  background: #fff3cd;
+  color: #b76e00;
+  border: 1px solid #ffe49a;
+}
+
+/* Approved */
+.bdapprove-status-badge.status-approved {
+  background: #d1e7dd;
+  color: #0f5132;
+  border: 1px solid #badbcc;
+}
+
+/* Rejected */
+.bdapprove-status-badge.status-rejected {
+  background: #f8d7da;
+  color: #842029;
+  border: 1px solid #f1aeb5;
+}
+
+/* DroneApprove.css */
+
+.approved-text {
+  display: inline-block;
+  padding: 8px 12px;
+  border: 1px solid #28a745; /* green border */
+  color: #28a745; /* green text */
+  border-radius: 6px;
+  font-weight: bold;
+  text-align: center;
+  background-color: #e6f4ea; /* optional light green background */
+  cursor: not-allowed;
+}
+
+.rejected-text {
+  display: inline-block;
+  padding: 8px 12px;
+  border: 1px solid red; /* green border */
+  color: #e75252; /* green text */
+  border-radius: 6px;
+  font-weight: bold;
+  text-align: center;
+  background-color: #f4e6e6; /* optional light green background */
+  cursor: not-allowed;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 992px) {
+  .drone-approve-page {
+    padding: 2rem;
+  }
+
+  .drone-approve-header {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .drone-approve-header {
+    font-size: 1.6rem;
+  }
+
+  .approve-btn,
+  .reject-btn,
+  .view-btn,
+  .link-btn {
+    padding: 5px 10px;
+    font-size: 0.85rem;
+  }
+
+  .approval-table th,
+  .approval-table td {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .drone-approve-page {
+    padding: 1.5rem;
+  }
+
+  .drone-approve-header {
+    font-size: 1.4rem;
+  }
+
+  .drone-table table,
+  .approval-table {
+    min-width: 100%;
+  }
+
+  .drone-table th,
+  .drone-table td {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .approve-btn,
+  .reject-btn,
+  .view-btn,
+  .link-btn {
+    padding: 4px 6px;
+    font-size: 0.75rem;
+  }
+}

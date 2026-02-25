@@ -1,0 +1,131 @@
+/* ===== FULL PAGE SUPPORT ===== */
+.bd-online-container {
+  padding: 45px 40px;
+  width: 100%;
+  height: calc(100vh - 90px);
+  background: #f7f7f7;
+  border-radius: 14px;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.15);
+  overflow-x: hidden;
+}
+
+/* Breadcrumbs */
+.bd-support-breadcrumb-wrapper {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+/* Page Title */
+.bd-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+/* Card List */
+.bd-online-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Base Card */
+.bd-card {
+  width: 320px;        /* FIXED WIDTH */
+  min-width: 320px;
+  max-width: 320px;
+
+  padding: 25px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  height: 160px;
+  background-color: #fff;
+  color: #000;
+}
+
+
+.bd-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Card Titles */
+.bd-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+/* Count wrapper */
+.bd-count-wrapper {
+  margin-top: auto;
+  display: flex;
+  gap: 12px;
+}
+
+.open-count,
+.closed-count {
+  color: #555; /* GRAY TEXT */
+  font-weight: 600;
+  background-color: #e0e0e0; /* LIGHT GRAY BACKGROUND */
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+/* UNIQUE CARD STYLES - subtle border or shadow if needed */
+.online-card {
+  border-left: 5px solid #4facfe; /* blue accent */
+}
+
+.onsite-card {
+  border-left: 5px solid #4facfe; /* blue accent */
+}
+
+.return-card {
+  border-left: 5px solid #4facfe; /* blue accent */
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .bd-online-list {
+    justify-content: center;
+  }
+
+  .bd-card {
+    flex: 1 1 80%;
+    height: auto;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .bd-card {
+    flex: 1 1 100%;
+    padding: 18px;
+  }
+
+  .bd-title {
+    font-size: 24px;
+  }
+
+  .bd-card h3 {
+    font-size: 18px;
+  }
+
+  .bd-count-wrapper {
+    flex-direction: column;
+    gap: 8px;
+  }
+}

@@ -1,0 +1,216 @@
+/* ===========================
+   MAIN CONTAINER
+=========================== */
+
+.bd-drone-container {
+  padding: 45px 40px;
+  width: 100%;
+  height: calc(100vh - 90px);
+  background: #f7f7f7;
+  border-radius: 14px;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 6px 18px rgba(0,0,0,0.15);
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================= HEADING ================= */
+
+.client-list-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1565c0;
+  margin-bottom: 25px;
+  text-shadow: 0 1px 3px rgba(21,101,192,0.3);
+}
+
+/* ================= TABLE DESIGN ================= */
+
+.sold-drone-table-wrapper {
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: auto;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.sold-drone-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Sticky Header */
+
+.sold-drone-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+/* Cells */
+
+.sold-drone-table th,
+.sold-drone-table td {
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.sold-drone-table th {
+  background: #1565c0;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.sold-drone-table td {
+  background: #fafafa;
+}
+
+.sold-drone-table tbody tr:hover td {
+  background: #e3f2fd;
+}
+
+/* ================= BUTTONS ================= */
+
+.view-btn {
+  background: #42a5f5;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.view-btn:hover {
+  background: #1e88e5;
+  transform: translateY(-1px);
+}
+
+/* ================= NO DATA ================= */
+
+.no-data-message {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #666;
+  padding: 40px 0;
+  font-weight: 600;
+  animation: fadeIn 0.4s ease;
+}
+
+/* ================= POPUP OVERLAY ================= */
+
+.client-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* ================= POPUP BOX ================= */
+
+.client-popup {
+  background: #fff;
+  border-radius: 12px;
+  width: 480px;
+  max-width: 90%;
+  padding: 20px;
+  box-shadow: 0 4px 25px rgba(0,0,0,0.3);
+  animation: popupFade 0.3s ease;
+}
+
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+
+.popup-header h3 {
+  color: #1565c0;
+  margin: 0;
+}
+
+/* Close button */
+
+.client-popup-close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #1565c0;
+  transition: 0.3s;
+}
+
+.client-popup-close-btn:hover {
+  color: #f44336;
+  transform: rotate(90deg);
+}
+
+/* ================= POPUP BODY ================= */
+
+.popup-body {
+  margin-top: 15px;
+  color: #333;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.popup-logo {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 15px;
+}
+
+/* ================= SCROLLBAR ================= */
+
+.sold-drone-table-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.sold-drone-table-wrapper::-webkit-scrollbar-thumb {
+  background: #90caf9;
+  border-radius: 4px;
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes popupFade {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+  .client-list-title {
+    font-size: 1.6rem;
+  }
+
+}

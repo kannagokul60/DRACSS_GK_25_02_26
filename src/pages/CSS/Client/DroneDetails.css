@@ -1,0 +1,112 @@
+/* ===== PAGE WRAPPER ===== */
+.approved-page {
+  flex: 1;
+  background: #f7f7f7;
+  padding: 2rem 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 10px;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  height: calc(100vh - 90px);
+}
+
+/* ===== BREADCRUMB ===== */
+.approved-breadcrumb-wrapper {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.2rem;
+}
+
+/* ===== TITLE ===== */
+.approved-title {
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1565c0;
+  text-shadow: 0 1px 3px rgba(21, 101, 192, 0.3);
+}
+
+/* ===== CONTAINER ===== */
+.approved-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 2rem;                 /* spacing between cards */
+  padding: 0 2rem 2rem;      /* OUTER spacing left/right/bottom */
+  box-sizing: border-box;
+}
+
+/* ===== CARD ===== */
+.approved-card {
+  width: 100%;
+  max-width: 650px;
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: 0.3s ease;
+  position: relative;
+}
+
+.approved-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== ICON ===== */
+.approved-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #e8f0ff;
+  color: #1565c0;
+  padding: 6px;
+  border-radius: 50%;
+  font-size: 1.4rem;
+}
+
+/* ===== IMAGE ===== */
+.approved-img {
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+/* ===== INFO ===== */
+.approved-info {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.approved-info h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.approved-info p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .approved-container {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+
+  .approved-card {
+    width: 100%;
+  }
+
+  .approved-img {
+    height: 130px;
+  }
+}
